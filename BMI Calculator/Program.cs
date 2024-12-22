@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BMI_Calculator
 {
     internal static class Program
     {
-        /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
-        /// </summary>
+
         [STAThread]
-        static void Main()
+        static void Main()  // Main method
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();   // Enables visual styles
+            Application.SetCompatibleTextRenderingDefault(false);   // Sets the compatible text rendering default to false
+
+            Form1 form1 = new Form1();  // Initializes a new Form1 object
+            CalculatorController controller = new CalculatorController(form1);  // Initializes a new CalculatorController object with the Form1 object as the parameter
+
+            Application.Run(form1); // Runs the application with the Form1 object
         }
     }
 }
